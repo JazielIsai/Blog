@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Jaziel Isaí</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+</head>
+<body>
+    <header class="header">
+        <div class="center">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="./assets/img/LogoJaziel.svg" alt="logotico" class="app-logo" />
+                <span class="brand">
+                    <strong>Ing. </strong>Sistemas Computacionales
+                </span>
+            </div>
+            <!-- Menu -->
+            <nav id="menu" class="menu">
+                <ul>
+                    <li>
+                        <a href="./index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="./blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="./formulario.html">Formulario</a>
+                    </li>
+                    <li>
+                        <a href="">Pagina 1</a>
+                    </li>
+                    <li>
+                        <a href="">Pagina 2</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+    <div class="center main">
+        <section class="content">
+            <h1 class="formulario">Formulario</h1>
+            <form class="mid-form" action="">
+                <div class="form-group">
+                    <label for=""> Nombre: </label>
+                    <input type="text" name="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label for=""> Apellidos: </label>
+                    <input type="text" name="name"/>
+                </div>
+                
+                <div class="form-group">
+                    <label for=""> Biografia: </label>
+                    <textarea name="bio">
+
+                    </textarea>
+                </div>
+                
+                <div class="form-group radiobuttons">
+                    <label for=""> 
+                        <input type="radio" name="genero" value='Hombre'/> 
+                        Hombre
+                    </label>
+                    <label for=""> 
+                        <input type="radio" name="genero" value='Mujer'/> 
+                        Mujer
+                    </label>
+                </div>
+
+                <input type="submit" name="submit" value="Enviar" class="btn btn-success"/>
+            </form>
+        </section>
+
+        <aside class="sidebar">
+
+            <div class="nav-blog sidebar-item">
+                <h3> Puedes hacer esto </h3>
+                <a href="" class="btn btn-success"> Crear articulo </a>
+            </div>
+
+            <div class="search sidebar-item">
+                <h3> Buscador </h3>
+                <p>Encuentra el articulo que gustas</p>
+                <form action="">
+                    <input type="text" name="search" placeholder="Ej: Vida programador"/>
+                    <input type="submit" name="submit" value="Buscar" class="btn btn-submit"/>
+
+                </form>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <div class="center">
+            <p> &copy; Blog Programación Jaziel Isaí </p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Jaziel Isaí</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+</head>
+<body>
+    <header class="header">
+        <div class="center">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="./assets/img/LogoJaziel.svg" alt="logotico" class="app-logo" />
+                <span class="brand">
+                    <strong>Ing. </strong>Sistemas Computacionales
+                </span>
+            </div>
+            <!-- Menu -->
+            <nav id="menu" class="menu">
+                <ul>
+                    <li>
+                        <a href="./index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="./blog.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="./formulario.html">Formulario</a>
+                    </li>
+                    <li>
+                        <a href="">Pagina 1</a>
+                    </li>
+                    <li>
+                        <a href="">Pagina 2</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="slider slider-big">
+        <h1> Bienvenido a mi blog de programación </h1>
+        <a href="" class="btn-white"> Ir al blog </a>        
+    </div>
+
+    <div class="center main">
+        <section class="content">
+            <h2 class="subheader"> Ultimos articulos </h2>
+            <!--List of articles-->
+            <div class="articles" id="articles">
+                <article class="article-item" id="article-templete">
+                    <div class="article-img-wrap">
+                        <img src="./assets//img/Programar.png" alt="programdor" />
+                    </div>
+                    <div class="article_content">
+                        <h2>Articulo: Como inicio mi deseo de programar</h2>
+                        <span class="article-date">
+                            Hace 5 minutos
+                        </span>
+                        <a href="./blog.html" class="btn" > Leer mas</a>
+                    </div>
+                </article>
+                <!--Add articles by js-->
+
+            </div>
+            
+        </section>
+
+        <aside class="sidebar">
+
+            <div class="nav-blog sidebar-item">
+                <h3> Puedes hacer esto </h3>
+                <a href="" class="btn btn-success"> Crear articulo </a>
+            </div>
+
+            <div class="search sidebar-item">
+                <h3> Buscador </h3>
+                <p>Encuentra el articulo que gustas</p>
+                <form action="">
+                    <input type="text" name="search" placeholder="Ej: Vida programador"/>
+                    <input type="submit" name="submit" value="Buscar" class="btn btn-submit"/>
+
+                </form>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <div class="center">
+            <p> &copy; Blog Programación Jaziel Isaí </p>
+        </div>
+    </footer>
+
+    <script src="./js/articles.js"></script>
+</body>
+</html>
