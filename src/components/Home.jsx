@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "./Slider";
 import Sidebar from "./Sidebar";
-import Article from "./Articles";
+import Articles from "./Articles";
 
 function Home() {
   return (
@@ -14,10 +14,12 @@ function Home() {
       />
 
       <div className="center main">
-        <section class="content">
-          <h2 class="subheader"> Ultimos articulos </h2>
+        <section className="content">
+          <h2 className="subheader"> Ultimos articulos </h2>
 
-          <Article />
+          <Articles 
+            home={true}
+          />
 
           {/* <div class="articles" id="articles">                
               </div> */}

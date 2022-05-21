@@ -13,10 +13,18 @@ export function useGet_Request(nameService) {
     useEffect( () => {
         axios.get(baseUrl + nameService)
         .then(response => {
+            console.log('response', response);
             setGetData({
                 error: null,
-                data: response.data.articles,
+                data: response.data.articles !== undefined ? response.data.articles : response.data.article,
                 success: true
+            })
+        })
+        .catch(err=>{
+            setGetData({
+                error: null,
+                data: null,
+                success: false
             })
         })
     },[nameService])

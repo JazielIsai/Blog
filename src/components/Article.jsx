@@ -1,33 +1,66 @@
-import {useState, useEffect} from "react";
-import {NavLink} from "react-router-dom";
-import {useGet_Request} from '../Hooks/useGet_Reuqest';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useGet_Request } from "../Hooks/useGet_Reuqest";
+import Moment from "react-moment";
+import "moment/locale/es";
+import Sidebar from "./Sidebar";
 
-function Article({img, title}) {
+import withoutPictures from "../assets/img/without_picture.png";
 
-  const [getArticle, setGetArticle] = useState(null);
-  
-  const { data } = useGet_Request('articles');
+
+function Article() {
+  const [getArticle, setGetArticle] = useState({});
+  const { id: idArticle } = useParams();
+
+  const { data } = useGet_Request("article/" + idArticle);
 
   useEffect(() => {
     setGetArticle(data);
-    console.log(data)
-  },[data])
+    console.log(data);
+  }, [data]);
 
   return (
-    <article className="article-item" id="article-templete">
-      <div className="article-img-wrap">
-        <img src={img} alt="programdor" />
+    <>
+      <div className="center main">
+        <section className="content">
+          {
+            getArticle !== undefined && getArticle !== null && (
+              <>
+                <article className="article-item article_detail">
+                  <div className="article-img-wrap">
+                    {
+                      getArticle.image != null ? (
+                          <img src={getArticle.image} alt={getArticle.title} />
+                        ) : (
+                          <img src={withoutPictures} alt="programdor" />
+                        )
+                    }
+                  </div>
+                  <div className="article_content">
+                    <h1 className="subheader"> {getArticle.title} </h1>
+                    <span className="article-date">
+                      <Moment locale="es" fromNow>
+                        {getArticle.date}
+                      </Moment>
+                    </span>
+                    <p>{getArticle.content}</p>
+                  </div>
+
+                  <div className="article-btns">
+                    <input type="button" value="Editar" className="btn btn-update" />
+                    <input type="button" value="Eliminar" className="btn btn-delete" />
+                  </div>
+
+                </article>
+              </>
+            )
+          }
+        </section>
+        <Sidebar 
+                blog={false}
+        />
       </div>
-      <div className="article_content">
-        <h2> {title}</h2>
-        <span className="article-date">Hace 5 minutos</span>
-        <NavLink to="/blog" className="btn">
-          {" "}
-          Leer mas
-        </NavLink>
-      </div>
-      
-    </article>
+    </>
   );
 }
 

@@ -290,6 +290,7 @@ img {
 
 .btn-success {
     background: rgb(23, 150, 19);
+    margin: 20px 0;
 }
 
 .btn-submit {
@@ -301,6 +302,28 @@ img {
     background: rgb(4, 112, 195);
 }
 
+.article-btns {
+    display: flex;
+    gap: 1.5em;
+}
+
+.btn-delete {
+    background: rgb(233,2,23);
+    border: none;
+}
+
+.btn-delete:hover {
+    background: rgb(98, 0, 8);
+}
+
+.btn-update{
+    background: rgb(97, 181, 118);
+    border: none;
+}
+
+.btn-update:hover{
+    background: rgb(17, 139, 47);
+}
 
 input[type="text"], textarea{
     width: 100%;
@@ -308,6 +331,23 @@ input[type="text"], textarea{
     padding: 5px;
     border: 1px solid #ccc;
     margin-bottom: 5px;
+}
+
+input[type="file"] {
+    width: 100%;
+    min-height: 30px;
+    border: 1px solid #ccc;
+    padding: 35px 5px;
+    margin-bottom: 15px;
+    background:rgb(205, 233, 198);
+}
+
+input[type="file"]::before {
+    content: "Arrastra y suelta:";
+    margin: auto;
+    padding: auto;
+    text-align: center;
+    
 }
 
 input[type="text"]:focus {

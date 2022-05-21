@@ -11,7 +11,9 @@ function Formulario() {
   const generoHombreRef = createRef();
   const generoMujerRef = createRef();
 
-  useEffect(() => {
+
+  const onSubmit = (e) => {
+    e.preventDefault();
 
     setDataForm( () => {
       let gener;
@@ -30,11 +32,7 @@ function Formulario() {
       }
 
     });
-    
-  }, [bioRef, generoHombreRef, generoMujerRef, lastNameRef, nameRef]);
 
-  const onSubmit = (e) => {
-    e.preventDefault();
     console.log(dataForm)
   };
 
