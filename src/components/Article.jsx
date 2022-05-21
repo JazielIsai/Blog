@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useGet_Request } from "../Hooks/useGet_Reuqest";
+import { requestDelete } from "../Helpers/RequestDelete";
 import Moment from "react-moment";
 import "moment/locale/es";
 import Sidebar from "./Sidebar";
@@ -10,17 +11,36 @@ import withoutPictures from "../assets/img/without_picture.png";
 
 function Article() {
   const [getArticle, setGetArticle] = useState({});
+  const [deleteArticle, setDeleteArticle] = useState(false);
   const { id: idArticle } = useParams();
 
   const { data } = useGet_Request("article/" + idArticle);
 
   useEffect(() => {
     setGetArticle(data);
-    console.log(data);
+    // console.log(data);
   }, [data]);
+
+  const handleClickUpdateArticle =()=>{
+    
+  }
+
+  const handleClickDeleteArticle = () => {
+    requestDelete('article/'+idArticle)
+      .then(response => {
+          setDeleteArticle(true);
+      })
+      .catch(err => {
+        setDeleteArticle(false);
+      })
+  }
 
   return (
     <>
+      {
+        deleteArticle &&
+          <Navigate to='/blog' />
+      }
       <div className="center main">
         <section className="content">
           {
@@ -47,8 +67,8 @@ function Article() {
                   </div>
 
                   <div className="article-btns">
-                    <input type="button" value="Editar" className="btn btn-update" />
-                    <input type="button" value="Eliminar" className="btn btn-delete" />
+                    <input type="button" value="Editar" className="btn btn-update" onClick={handleClickUpdateArticle}/>
+                    <input type="button" value="Eliminar" className="btn btn-delete" onClick={handleClickDeleteArticle} />
                   </div>
 
                 </article>

@@ -22,6 +22,7 @@ export async function requestPost(nameService, article, uploadImage=null) {
                     })
                     .catch(err => {
                         console.log(err);
+                        return "succes";
                     })
                     
             } else {

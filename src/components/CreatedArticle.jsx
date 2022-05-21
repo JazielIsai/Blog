@@ -12,6 +12,7 @@ function CreatedArticle() {
     const submitCreateArticle = (e) => {
         e.preventDefault();
         // console.log(dataFormCreateArticle)
+        // console.log(imageFile)
         requestPost('save', dataFormCreateArticle,imageFile)
             .then (response=>{
                 setSuccessCreateArticle(response)
