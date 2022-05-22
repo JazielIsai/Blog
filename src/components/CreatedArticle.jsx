@@ -1,5 +1,6 @@
-import {useState} from 'react'
+import {useState, useRef} from 'react'
 import {Navigate} from 'react-router-dom';
+import {sweetAlert} from '../Helpers/SweetAlert.js';
 import Sidebar from './Sidebar';
 import {requestPost} from '../Helpers/RequestPost';
 
@@ -8,6 +9,7 @@ function CreatedArticle() {
     const [dataFormCreateArticle, setDataFormCreateArticle] = useState({});
     const [imageFile, setImageFile] = useState({});
     const [successCreateArticle, setSuccessCreateArticle] = useState('')
+    const {successAlert} = sweetAlert();
 
     const submitCreateArticle = (e) => {
         e.preventDefault();
@@ -15,10 +17,14 @@ function CreatedArticle() {
         // console.log(imageFile)
         requestPost('save', dataFormCreateArticle,imageFile)
             .then (response=>{
+                successAlert('Guardado!', 'Buen trabajo, has guardado un nuevo artículo!.');
+                
                 setSuccessCreateArticle(response)
             })
-
+        
     }
+
+    
 
     const onChangeDataCreateArticle = ({target}) => {
         const {name, value} = target;
