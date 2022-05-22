@@ -1,4 +1,4 @@
-import {useState, useRef} from 'react'
+import {useState} from 'react'
 import {Navigate} from 'react-router-dom';
 import {sweetAlert} from '../Helpers/SweetAlert.js';
 import Sidebar from './Sidebar';
@@ -18,7 +18,7 @@ function CreatedArticle() {
         requestPost('save', dataFormCreateArticle,imageFile)
             .then (response=>{
                 successAlert('Guardado!', 'Buen trabajo, has guardado un nuevo artículo!.');
-                
+
                 setSuccessCreateArticle(response)
             })
         

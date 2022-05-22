@@ -74,7 +74,10 @@ export function sweetAlert() {
     return {
         successAlert,
         questionAlert,
-        customImageAlert
+        customImageAlert,
+        dialogAlertWithButtons,
+        confirmDialog,
+        errorAlert
 
     }
 
