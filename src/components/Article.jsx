@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { useGet_Request } from "../Hooks/useGet_Reuqest";
 import { requestDelete } from "../Helpers/RequestDelete";
+import { sweetAlert } from "../Helpers/SweetAlert";
 import Moment from "react-moment";
 import "moment/locale/es";
 import Sidebar from "./Sidebar";
@@ -15,6 +16,7 @@ function Article() {
   const { id: idArticle } = useParams();
 
   const { data } = useGet_Request("article/" + idArticle);
+  const {confirmDialog} = sweetAlert();
 
   useEffect(() => {
     setGetArticle(data);
@@ -26,9 +28,18 @@ function Article() {
   }
 
   const handleClickDeleteArticle = () => {
-    requestDelete('article/'+idArticle)
-      .then(response => {
-          setDeleteArticle(true);
+    confirmDialog('¿Estas seguro?', '¿Deseas eliminar este artículo?', 'Eliminado', 'Artículo eliminado')
+      .then((response)=>{
+        if(response){
+          requestDelete('article/'+idArticle)
+            .then(response => {  
+              setDeleteArticle(true);
+                
+            })
+            .catch(err => {
+              setDeleteArticle(false);
+            });
+        }
       })
       .catch(err => {
         setDeleteArticle(false);
