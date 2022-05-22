@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, Link } from "react-router-dom";
 import { useGet_Request } from "../Hooks/useGet_Reuqest";
 import { requestDelete } from "../Helpers/RequestDelete";
 import { sweetAlert } from "../Helpers/SweetAlert";
@@ -78,7 +78,9 @@ function Article() {
                   </div>
 
                   <div className="article-btns">
-                    <input type="button" value="Editar" className="btn btn-update" onClick={handleClickUpdateArticle}/>
+                    <Link to={'/blog/edit/' + idArticle } className="btn btn-update" onClick={handleClickUpdateArticle}>
+                      Editar
+                    </Link>
                     <input type="button" value="Eliminar" className="btn btn-delete" onClick={handleClickDeleteArticle} />
                   </div>
 

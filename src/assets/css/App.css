@@ -317,12 +317,13 @@ img {
 }
 
 .btn-update{
-    background: rgb(97, 181, 118);
+    background: rgb(133, 210, 152) !important;
     border: none;
+    list-style: none;    
 }
 
 .btn-update:hover{
-    background: rgb(17, 139, 47);
+    background: rgb(28, 186, 68) !important;
 }
 
 input[type="text"], textarea{

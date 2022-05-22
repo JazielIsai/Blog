@@ -6,6 +6,7 @@ import Article from '../components/Article';
 import Search from '../components/Search';
 import RedirectSearch from './RedirectSearch';
 import CreatedArticle from '../components/CreatedArticle';
+import EditArticle from '../components/EditArticle';
 
 function RoutesNav() {
     return (
@@ -22,6 +23,7 @@ function RoutesNav() {
             <Route path="/blog/article/:id" element={<Article />}/>
             <Route path="/blog/searching/:search" element={<Search />}/>
             <Route path="/blog/create" element={<CreatedArticle/>}/>
+            <Route path="/blog/edit/:id" element={<EditArticle/>}/>
             <Route path="/redirect/:search" element={<RedirectSearch/> }/>
             <Route element={Error} />
         </Routes>
