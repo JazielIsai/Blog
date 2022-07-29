@@ -1,7 +1,6 @@
 import Home from '../components/Home';
 import Blog from '../components/Blog';
 import Formulario from '../components/Formulario';
-// import Article from '../components/Article';
 
 export const navPath = [
     {
@@ -33,11 +32,6 @@ export const navPath = [
         path: '/page2',
         name: 'Pagina 2',
         component: ''
-    },
-    // {
-    //     path: '/article/:id',
-    //     component: <Article />
-
-    // }
+    }
     
 ]

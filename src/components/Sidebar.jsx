@@ -1,11 +1,8 @@
-import { createRef, useState, useEffect } from "react";
+import { useState } from "react";
 import { Navigate, NavLink } from "react-router-dom";
 
 function Sidebar({ blog }) {
-  const [stateSearch, setStateSearch] = useState({
-    search: null,
-    redirect: false,
-  });
+  
   const [readSearch, setReadSearch] = useState('');
   // const searchRef = createRef();
 

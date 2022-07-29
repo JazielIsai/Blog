@@ -1,4 +1,4 @@
-import { createRef, useState, useEffect } from "react";
+import { createRef, useState } from "react";
 import Slider from "./Slider";
 import Sidebar from "./Sidebar";
 
